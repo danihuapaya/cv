@@ -5,7 +5,7 @@
 }
 
 .box-shadow {
-    box-shadow: 10px 10px 40px -5px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 40px -5px rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
     padding: 40px;
     border: 1px solid lightgrey;
@@ -13,9 +13,34 @@
     overflow: hidden;
     transition: all .3s;
 }
-
 .box-shadow:hover {
-    box-shadow: 10px 10px 40px -5px rgba(0,0,0,0.4);
+    box-shadow: 10px 10px 40px -5px red;
+}
+
+.fondo-profile {
+    max-width: 100%;
+}
+.container-fondo {
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 1;
+}
+
+.box-shadow-header {
+    background-color: aliceblue;
+    box-shadow: 10px 10px 40px -5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    padding: 20px;
+    border: 5px solid lightgrey;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all .3s;
+    position: relative;
+}
+
+.box-shadow-header:hover {
+    box-shadow: 10px 10px 40px -5px cyan;
 }
 
 .box-shadow.has-title h3 {
@@ -23,14 +48,18 @@
     transition: all .3s;
     cursor: pointer;
 }
+
 .box-shadow.has-title h3:hover {
     color: darkgray;
 }
 
 .profile-details {
     float: left;
-    padding-left: 50px;
+    padding: 20px;
     width: 70%;
+    position: relative;
+    z-index: 10;
+    margin-left: 150px;
 }
 
 .profile-picture {
@@ -38,6 +67,17 @@
     max-width: 130px;
     border-radius: 100%;
     float: left;
+    border: 2px solid cyan;
+    z-index: 10;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+.profile-text {
+    background-color: rgba(242, 250, 190, 0.22);
+    text-shadow: 4px 4px 10px cyan;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .is-half {
@@ -47,22 +87,27 @@
     margin-right: 20px;
     min-height: 200px;
 }
+
 footer {
     text-align: right;
     padding: 40px;
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 350px) {
     header {
         text-align: center;
     }
+
     .profile-picture {
         margin-bottom: 20px;
+        transform: translateY(0);
     }
+
     .profile-details, .profile-picture {
         float: none;
         width: 100%;
         padding: 0;
+        margin-left: 0px;
     }
 
     .is-half {
@@ -70,5 +115,20 @@ footer {
         float: none;
         margin-left: 0;
         margin-right: 0;
+    }
+    .fondo-profile {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .box-shadow-header {
+        background-color: deeppink;
+    }
+    .profile-picture {
+        position: relative;
+    }
+    .profile-text {
+        position: relative;
     }
 }
